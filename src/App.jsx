@@ -41,38 +41,26 @@ const AppContent = () => {
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
       <header className="sticky top-0 z-40 bg-white shadow-sm border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            {/* Left: Back button (mobile) + Restaurant name */}
-            <div className="flex items-center">
-              <button className="lg:hidden mr-3 p-1 text-gray-600">
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                </svg>
-              </button>
-              <div>
-                <h1 className={`text-lg sm:text-xl font-bold text-gray-900 ${getLanguageClass()}`}>
+        <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8">
+          <div className="flex justify-between items-center h-14 sm:h-16">
+            {/* Left: Restaurant name */}
+            <div className="flex items-center min-w-0 flex-1">
+              <div className="min-w-0">
+                <h1 className={`text-base sm:text-lg lg:text-xl font-bold text-gray-900 truncate ${getLanguageClass()}`}>
                   {getText(restaurant.name)}
                 </h1>
-                <p className="text-sm text-gray-500">
+                <p className="text-xs sm:text-sm text-gray-500 hidden sm:block">
                   {currentLanguage === 'zh' ? '在线菜单' : currentLanguage === 'th' ? 'เมนูออนไลน์' : 'Online Menu'}
                 </p>
               </div>
             </div>
 
-            {/* Right: Language switcher + Search/Cart icons */}
-            <div className="flex items-center space-x-4">
+            {/* Right: Compact controls */}
+            <div className="flex items-center space-x-2 sm:space-x-3">
               <LanguageSwitcher />
               
-              {/* Search icon */}
-              <button className="p-2 text-gray-600 hover:text-orange-500 transition-colors">
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                </svg>
-              </button>
-
-              {/* Future: Cart icon */}
-              <button className="relative p-2 text-gray-600 hover:text-orange-500 transition-colors">
+              {/* Cart icon only (removed search to save space) */}
+              <button className="relative p-1.5 sm:p-2 text-gray-600 hover:text-orange-500 transition-colors">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
                 </svg>
@@ -86,7 +74,7 @@ const AppContent = () => {
       </header>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto flex">
+      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row">
         {/* Sidebar */}
         <CategorySidebar 
           categories={restaurant.categories}
@@ -95,19 +83,19 @@ const AppContent = () => {
         />
 
         {/* Main Content Area */}
-        <main className="flex-1 p-4 lg:p-6">
+        <main className="flex-1 p-3 sm:p-4 lg:p-6">
           {/* Category Header */}
-          <div className="mb-6">
-            <h2 className={`text-2xl sm:text-3xl font-bold text-gray-900 mb-2 ${getLanguageClass()}`}>
+          <div className="mb-4 sm:mb-6">
+            <h2 className={`text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-1 sm:mb-2 ${getLanguageClass()}`}>
               {getText(currentCategory?.name)}
             </h2>
-            <p className="text-gray-600">
+            <p className="text-sm sm:text-base text-gray-600">
               {currentCategory?.items?.length || 0} {currentLanguage === 'zh' ? '种商品' : currentLanguage === 'th' ? 'รายการ' : 'items'}
             </p>
           </div>
 
           {/* Items Grid */}
-          <div className="space-y-4">
+          <div className="space-y-3 sm:space-y-4">
             {currentCategory?.items?.map((item) => (
               <MenuItem 
                 key={item.id} 

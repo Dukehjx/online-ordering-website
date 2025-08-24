@@ -32,10 +32,10 @@ const MenuItem = ({ item, onCustomize }) => {
   };
 
   return (
-    <div className="menu-item-card p-4 mb-4">
-      <div className="flex gap-4">
+    <div className="menu-item-card p-3 sm:p-4 mb-3 sm:mb-4">
+      <div className="flex gap-3 sm:gap-4">
         {/* Product Image */}
-        <div className="w-20 h-20 sm:w-24 sm:h-24 flex-shrink-0 bg-gray-100 rounded-lg overflow-hidden">
+        <div className="w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 flex-shrink-0 bg-gray-100 rounded-lg overflow-hidden">
           {!imageError ? (
             <img
               src={item.image}
@@ -54,26 +54,26 @@ const MenuItem = ({ item, onCustomize }) => {
 
         {/* Product Info */}
         <div className="flex-1 min-w-0">
-          <div className="flex justify-between items-start mb-2">
-            <h3 className={`font-semibold text-gray-900 text-base sm:text-lg leading-tight ${getLanguageClass()}`}>
+          <div className="flex justify-between items-start mb-1 sm:mb-2">
+            <h3 className={`font-semibold text-gray-900 text-sm sm:text-base lg:text-lg leading-tight ${getLanguageClass()}`}>
               {getText(item.name)}
             </h3>
             {item.tags && item.tags.includes('popular') && (
-              <span className="badge-new ml-2 flex-shrink-0">
+              <span className="bg-orange-100 text-orange-600 text-xs px-1.5 py-0.5 rounded-full ml-2 flex-shrink-0 font-medium">
                 {currentLanguage === 'zh' ? '热门' : currentLanguage === 'th' ? 'ยอดนิยม' : 'Popular'}
               </span>
             )}
           </div>
 
-          <p className={`text-gray-600 text-sm mb-3 leading-relaxed ${getLanguageClass()}`}>
+          <p className={`text-gray-600 text-xs sm:text-sm mb-2 sm:mb-3 leading-relaxed line-clamp-2 ${getLanguageClass()}`}>
             {getText(item.description)}
           </p>
 
-          {/* Tags */}
+          {/* Tags - Hidden on mobile to save space */}
           {item.tags && item.tags.length > 0 && (
-            <div className="flex flex-wrap gap-1 mb-3">
-              {item.tags.slice(0, 3).map((tag) => (
-                <span key={tag} className="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-full">
+            <div className="hidden sm:flex flex-wrap gap-1 mb-2 sm:mb-3">
+              {item.tags.slice(0, 2).map((tag) => (
+                <span key={tag} className="px-2 py-0.5 bg-gray-100 text-gray-600 text-xs rounded-full">
                   {tag}
                 </span>
               ))}
@@ -82,12 +82,12 @@ const MenuItem = ({ item, onCustomize }) => {
 
           {/* Price and Action */}
           <div className="flex justify-between items-center">
-            <div className="price-tag text-lg sm:text-xl font-bold">
+            <div className="text-orange-600 text-base sm:text-lg lg:text-xl font-bold">
               {formatPrice(item.price)}
             </div>
             <button 
               onClick={() => onCustomize(item)}
-              className="btn-primary text-sm px-4 py-2"
+              className="bg-orange-500 hover:bg-orange-600 text-white text-xs sm:text-sm px-3 sm:px-4 py-1.5 sm:py-2 rounded-md font-medium transition-colors duration-200"
             >
               {currentLanguage === 'zh' ? '选规格' : currentLanguage === 'th' ? 'เลือกรูปแบบ' : 'Customize'}
             </button>
