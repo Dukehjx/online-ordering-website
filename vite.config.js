@@ -10,6 +10,20 @@ export default defineConfig({
   },
   build: {
     outDir: 'build',
+    // Disable gzip reporting to prevent hanging
+    reportCompressedSize: false,
+    // Increase chunk size warning limit
+    chunkSizeWarningLimit: 1000,
+    // Optimize asset handling
+    assetsInlineLimit: 4096,
+    rollupOptions: {
+      output: {
+        // Improve chunking strategy
+        manualChunks: {
+          vendor: ['react', 'react-dom'],
+        },
+      },
+    },
   },
   css: {
     postcss: './postcss.config.cjs',
