@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
+import { useCart } from '../contexts/CartContext';
 
 const CustomizationModal = ({ item, isOpen, onClose }) => {
   const { getText, currentLanguage } = useLanguage();
+  const { addToCart } = useCart();
   const [selectedOptions, setSelectedOptions] = useState({
     size: 'regular',
     iceLevel: 'normal-ice',
@@ -24,21 +26,14 @@ const CustomizationModal = ({ item, isOpen, onClose }) => {
   };
 
   const formatPrice = (price) => {
-    switch (currentLanguage) {
-      case 'zh':
-        return `¥${price}`;
-      case 'th':
-        return `฿${price}`;
-      default:
-        return `$${price}`;
-    }
+    return `฿${price}`;
   };
 
   const getOptionText = (option, type) => {
     const translations = {
       // Size options
       'regular': { en: 'Regular', th: 'ธรรมดา', zh: '标准杯' },
-      'large': { en: 'Large (+$2)', th: 'ใหญ่ (+฿2)', zh: '大杯 (+¥2)' },
+      'large': { en: 'Large (+฿2)', th: 'ใหญ่ (+฿2)', zh: '大杯 (+฿2)' },
       
       // Ice level options
       'no-ice': { en: 'No Ice', th: 'ไม่ใส่น้ำแข็ง', zh: '去冰' },
@@ -54,9 +49,9 @@ const CustomizationModal = ({ item, isOpen, onClose }) => {
       '100%': { en: '100% Sweet', th: 'หวานเต็มที่', zh: '全糖' },
       
       // Extras
-      'extra-oreo': { en: 'Extra Oreo (+$2)', th: 'โอริโอ้เพิ่ม (+฿2)', zh: '加奥利奥 (+¥2)' },
-      'extra-jelly': { en: 'Extra Jelly (+$1)', th: 'วุ้นเพิ่ม (+฿1)', zh: '加果冻 (+¥1)' },
-      'whipped-cream': { en: 'Whipped Cream (+$2)', th: 'วิปครีม (+฿2)', zh: '奶油 (+¥2)' }
+      'extra-oreo': { en: 'Extra Oreo (+฿2)', th: 'โอริโอ้เพิ่ม (+฿2)', zh: '加奥利奥 (+฿2)' },
+      'extra-jelly': { en: 'Extra Jelly (+฿1)', th: 'วุ้นเพิ่ม (+฿1)', zh: '加果冻 (+฿1)' },
+      'whipped-cream': { en: 'Whipped Cream (+฿2)', th: 'วิปครีม (+฿2)', zh: '奶油 (+฿2)' }
     };
     
     return translations[option]?.[currentLanguage] || option;
@@ -90,29 +85,8 @@ const CustomizationModal = ({ item, isOpen, onClose }) => {
   };
 
   const calculateTotalPrice = () => {
-    let total = item.price;
-    
-    // Add size premium
-    if (selectedOptions.size === 'large') {
-      total += 2;
-    }
-    
-    // Add extras
-    selectedOptions.extras.forEach(extra => {
-      switch (extra) {
-        case 'extra-oreo':
-        case 'whipped-cream':
-          total += 2;
-          break;
-        case 'extra-jelly':
-          total += 1;
-          break;
-        default:
-          break;
-      }
-    });
-    
-    return total;
+    // No size premiums or extras for this shop - all items are regular size only
+    return item.price;
   };
 
   return (
@@ -144,8 +118,8 @@ const CustomizationModal = ({ item, isOpen, onClose }) => {
         <div className="p-4 space-y-6">
           {item.customization && (
             <>
-              {/* Size Options */}
-              {item.customization.size && (
+              {/* Size Options - Only show if more than one size */}
+              {item.customization.size && item.customization.size.length > 1 && (
                 <div>
                   <h3 className={`font-semibold text-gray-900 mb-3 ${getLanguageClass()}`}>
                     {getSectionTitle('size')}
@@ -222,30 +196,7 @@ const CustomizationModal = ({ item, isOpen, onClose }) => {
                 </div>
               )}
 
-              {/* Extras */}
-              {item.customization.extras && (
-                <div>
-                  <h3 className={`font-semibold text-gray-900 mb-3 ${getLanguageClass()}`}>
-                    {getSectionTitle('extras')}
-                  </h3>
-                  <div className="space-y-2">
-                    {item.customization.extras.map((extra) => (
-                      <label key={extra} className="flex items-center cursor-pointer">
-                        <input
-                          type="checkbox"
-                          value={extra}
-                          checked={selectedOptions.extras.includes(extra)}
-                          onChange={(e) => handleOptionChange('extras', e.target.value)}
-                          className="w-4 h-4 text-orange-500 focus:ring-orange-500 rounded"
-                        />
-                        <span className={`ml-3 text-gray-700 ${getLanguageClass()}`}>
-                          {getOptionText(extra, 'extras')}
-                        </span>
-                      </label>
-                    ))}
-                  </div>
-                </div>
-              )}
+
             </>
           )}
 
@@ -285,13 +236,12 @@ const CustomizationModal = ({ item, isOpen, onClose }) => {
             </button>
             <button 
               onClick={() => {
-                // For now, just close the modal
-                // In the future, this would add to cart
+                addToCart(item, selectedOptions);
                 onClose();
               }}
               className="flex-1 py-3 px-4 bg-orange-500 text-white rounded-lg font-medium hover:bg-orange-600 transition-colors"
             >
-              {currentLanguage === 'zh' ? '确认选择' : currentLanguage === 'th' ? 'ยืนยัน' : 'Confirm'}
+              {currentLanguage === 'zh' ? '添加到购物车' : currentLanguage === 'th' ? 'เพิ่มลงตะกร้า' : 'Add to Cart'}
             </button>
           </div>
         </div>

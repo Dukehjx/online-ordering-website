@@ -21,14 +21,7 @@ const MenuItem = ({ item, onCustomize }) => {
   };
 
   const formatPrice = (price) => {
-    switch (currentLanguage) {
-      case 'zh':
-        return `¥${price}`;
-      case 'th':
-        return `฿${price}`;
-      default:
-        return `$${price}`;
-    }
+    return `฿${price}`;
   };
 
   return (

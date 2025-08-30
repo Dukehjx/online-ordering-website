@@ -1,17 +1,21 @@
 import React, { useState } from 'react';
 import { LanguageProvider, useLanguage } from './contexts/LanguageContext';
+import { CartProvider, useCart } from './contexts/CartContext';
 import { restaurantData } from './data/menuData';
 import LanguageSwitcher from './components/LanguageSwitcher';
 import CategorySidebar from './components/CategorySidebar';
 import MenuItem from './components/MenuItem';
 import CustomizationModal from './components/CustomizationModal';
+import Cart from './components/Cart';
 
 const AppContent = () => {
   const { getText, currentLanguage } = useLanguage();
+  const { getCartItemCount } = useCart();
   const [selectedRestaurant] = useState('drinking-shop'); // For now, only one restaurant
   const [activeCategory, setActiveCategory] = useState('milk-tea');
   const [selectedItem, setSelectedItem] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isCartOpen, setIsCartOpen] = useState(false);
 
   const restaurant = restaurantData[selectedRestaurant];
   const currentCategory = restaurant.categories.find(cat => cat.id === activeCategory);
@@ -24,6 +28,14 @@ const AppContent = () => {
   const closeModal = () => {
     setIsModalOpen(false);
     setSelectedItem(null);
+  };
+
+  const openCart = () => {
+    setIsCartOpen(true);
+  };
+
+  const closeCart = () => {
+    setIsCartOpen(false);
   };
 
   const getLanguageClass = () => {
@@ -43,8 +55,13 @@ const AppContent = () => {
       <header className="sticky top-0 z-40 bg-white shadow-sm border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8">
           <div className="flex justify-between items-center h-14 sm:h-16">
-            {/* Left: Restaurant name */}
+            {/* Left: Logo and Restaurant name */}
             <div className="flex items-center min-w-0 flex-1">
+              <img 
+                src="/logo.png" 
+                alt="My Smoothies Logo" 
+                className="w-8 h-8 sm:w-10 sm:h-10 mr-2 sm:mr-3 flex-shrink-0"
+              />
               <div className="min-w-0">
                 <h1 className={`text-base sm:text-lg lg:text-xl font-bold text-gray-900 truncate ${getLanguageClass()}`}>
                   {getText(restaurant.name)}
@@ -59,14 +76,19 @@ const AppContent = () => {
             <div className="flex items-center space-x-2 sm:space-x-3">
               <LanguageSwitcher />
               
-              {/* Cart icon only (removed search to save space) */}
-              <button className="relative p-1.5 sm:p-2 text-gray-600 hover:text-orange-500 transition-colors">
+              {/* Cart icon */}
+              <button 
+                onClick={openCart}
+                className="relative p-1.5 sm:p-2 text-gray-600 hover:text-orange-500 transition-colors"
+              >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
                 </svg>
-                <span className="absolute -top-1 -right-1 bg-orange-500 text-white text-xs rounded-full w-4 h-4 flex items-center justify-center">
-                  0
-                </span>
+                {getCartItemCount() > 0 && (
+                  <span className="absolute -top-1 -right-1 bg-orange-500 text-white text-xs rounded-full w-4 h-4 flex items-center justify-center">
+                    {getCartItemCount()}
+                  </span>
+                )}
               </button>
             </div>
           </div>
@@ -129,13 +151,26 @@ const AppContent = () => {
         onClose={closeModal}
       />
 
+      {/* Cart */}
+      <Cart 
+        isOpen={isCartOpen}
+        onClose={closeCart}
+      />
+
       {/* Footer */}
       <footer className="bg-white border-t border-gray-200 mt-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="text-center">
-            <h3 className={`text-lg font-semibold text-gray-900 mb-2 ${getLanguageClass()}`}>
-              {getText(restaurant.name)}
-            </h3>
+            <div className="flex items-center justify-center mb-4">
+              <img 
+                src="/logo.png" 
+                alt="My Smoothies Logo" 
+                className="w-12 h-12 mr-3"
+              />
+              <h3 className={`text-lg font-semibold text-gray-900 ${getLanguageClass()}`}>
+                {getText(restaurant.name)}
+              </h3>
+            </div>
             <p className={`text-gray-600 mb-4 ${getLanguageClass()}`}>
               {currentLanguage === 'zh' ? '美味饮品，新鲜制作' : currentLanguage === 'th' ? 'เครื่องดื่มอร่อย ทำใหม่สด' : 'Delicious drinks, freshly made'}
             </p>
@@ -152,7 +187,9 @@ const AppContent = () => {
 function App() {
   return (
     <LanguageProvider>
-      <AppContent />
+      <CartProvider>
+        <AppContent />
+      </CartProvider>
     </LanguageProvider>
   );
 }

@@ -2,9 +2,9 @@ export const restaurantData = {
   "drinking-shop": {
     id: "drinking-shop",
     name: {
-      en: "Drinking Shop",
-      th: "ร้านเครื่องดื่ม",
-      zh: "饮品店"
+      en: "My Smoothies",
+      th: "มาย สมูทตี้",
+      zh: "我的果昔店"
     },
     categories: [
       {
@@ -22,7 +22,7 @@ export const restaurantData = {
               th: "นมสดปั่น/เย็น",
               zh: "鲜奶（搅拌/冰镇）"
             },
-            price: 25,
+            price: 35,
             image: "/images/drinking-shop/fresh-milk-blended.png",
             description: {
               en: "Creamy fresh milk served blended or iced",
@@ -32,7 +32,7 @@ export const restaurantData = {
             customization: {
               iceLevel: ["no-ice", "less-ice", "normal-ice", "extra-ice"],
               sweetness: ["no-sugar", "25%", "50%", "75%", "100%"],
-              size: ["regular", "large"]
+              size: ["regular"]
             },
             tags: ["dairy"]
           },
@@ -43,7 +43,7 @@ export const restaurantData = {
               th: "โกโก้",
               zh: "可可"
             },
-            price: 30,
+            price: 35,
             image: "/images/drinking-shop/cocoa.png",
             description: {
               en: "Rich chocolate cocoa drink",
@@ -53,7 +53,7 @@ export const restaurantData = {
             customization: {
               iceLevel: ["no-ice", "less-ice", "normal-ice", "extra-ice"],
               sweetness: ["no-sugar", "25%", "50%", "75%", "100%"],
-              size: ["regular", "large"]
+              size: ["regular"]
             },
             tags: ["chocolate", "dairy"]
           },
@@ -64,7 +64,7 @@ export const restaurantData = {
               th: "ช็อคโกแลต",
               zh: "巧克力"
             },
-            price: 32,
+            price: 35,
             image: "/images/drinking-shop/chocolate.png",
             description: {
               en: "Creamy chocolate drink",
@@ -74,7 +74,7 @@ export const restaurantData = {
             customization: {
               iceLevel: ["no-ice", "less-ice", "normal-ice", "extra-ice"],
               sweetness: ["no-sugar", "25%", "50%", "75%", "100%"],
-              size: ["regular", "large"]
+              size: ["regular"]
             },
             tags: ["chocolate", "dairy"]
           },
@@ -85,7 +85,7 @@ export const restaurantData = {
               th: "ชาไทย",
               zh: "泰式奶茶"
             },
-            price: 28,
+            price: 35,
             image: "/images/drinking-shop/thai-tea.png",
             description: {
               en: "Traditional Thai tea with milk",
@@ -95,7 +95,7 @@ export const restaurantData = {
             customization: {
               iceLevel: ["no-ice", "less-ice", "normal-ice", "extra-ice"],
               sweetness: ["no-sugar", "25%", "50%", "75%", "100%"],
-              size: ["regular", "large"]
+              size: ["regular"]
             },
             tags: ["tea", "dairy", "signature"]
           },
@@ -106,7 +106,7 @@ export const restaurantData = {
               th: "ชาเขียว",
               zh: "绿茶"
             },
-            price: 25,
+            price: 35,
             image: "/images/drinking-shop/green-tea.png",
             description: {
               en: "Fresh green tea",
@@ -116,7 +116,7 @@ export const restaurantData = {
             customization: {
               iceLevel: ["no-ice", "less-ice", "normal-ice", "extra-ice"],
               sweetness: ["no-sugar", "25%", "50%", "75%", "100%"],
-              size: ["regular", "large"]
+              size: ["regular"]
             },
             tags: ["tea", "healthy"]
           },
@@ -127,7 +127,7 @@ export const restaurantData = {
               th: "เนสกาแฟ",
               zh: "雀巢咖啡"
             },
-            price: 20,
+            price: 35,
             image: "/images/drinking-shop/nescafe.png",
             description: {
               en: "Classic Nescafé coffee",
@@ -137,7 +137,7 @@ export const restaurantData = {
             customization: {
               iceLevel: ["no-ice", "less-ice", "normal-ice", "extra-ice"],
               sweetness: ["no-sugar", "25%", "50%", "75%", "100%"],
-              size: ["regular", "large"]
+              size: ["regular"]
             },
             tags: ["coffee"]
           },
@@ -148,7 +148,7 @@ export const restaurantData = {
               th: "นมเย็น",
               zh: "粉红牛奶（沙拉味）"
             },
-            price: 27,
+            price: 35,
             image: "/images/drinking-shop/pink-milk.png",
             description: {
               en: "Sweet pink milk with Sala flavor",
@@ -158,7 +158,7 @@ export const restaurantData = {
             customization: {
               iceLevel: ["no-ice", "less-ice", "normal-ice", "extra-ice"],
               sweetness: ["no-sugar", "25%", "50%", "75%", "100%"],
-              size: ["regular", "large"]
+              size: ["regular"]
             },
             tags: ["dairy", "specialty"]
           },
@@ -169,7 +169,7 @@ export const restaurantData = {
               th: "โกโก้โอริโอ้ปั่น",
               zh: "可可奥利奥奶昔"
             },
-            price: 38,
+            price: 35,
             image: "/images/drinking-shop/cocoa-oreo.png",
             description: {
               en: "Blended cocoa with Oreo cookies",
@@ -179,8 +179,7 @@ export const restaurantData = {
             customization: {
               iceLevel: ["no-ice", "less-ice", "normal-ice", "extra-ice"],
               sweetness: ["no-sugar", "25%", "50%", "75%", "100%"],
-              size: ["regular", "large"],
-              extras: ["extra-oreo", "whipped-cream"]
+              size: ["regular"]
             },
             tags: ["smoothie", "chocolate", "popular"]
           },
@@ -201,8 +200,7 @@ export const restaurantData = {
             customization: {
               iceLevel: ["no-ice", "less-ice", "normal-ice", "extra-ice"],
               sweetness: ["no-sugar", "25%", "50%", "75%", "100%"],
-              size: ["regular", "large"],
-              extras: ["extra-oreo"]
+              size: ["regular"]
             },
             tags: ["dairy", "popular"]
           },
@@ -213,7 +211,7 @@ export const restaurantData = {
               th: "นมสดปีโป้",
               zh: "鲜奶加Pipo果冻"
             },
-            price: 33,
+            price: 35,
             image: "/images/drinking-shop/fresh-milk-pipo-jelly.png",
             description: {
               en: "Fresh milk with chewy Pipo jelly",
@@ -223,8 +221,7 @@ export const restaurantData = {
             customization: {
               iceLevel: ["no-ice", "less-ice", "normal-ice", "extra-ice"],
               sweetness: ["no-sugar", "25%", "50%", "75%", "100%"],
-              size: ["regular", "large"],
-              extras: ["extra-jelly"]
+              size: ["regular"]
             },
             tags: ["dairy", "jelly"]
           },
@@ -235,7 +232,7 @@ export const restaurantData = {
               th: "โยเกิร์ตปีโป้ปั่น",
               zh: "酸奶Pipo果冻奶昔"
             },
-            price: 36,
+            price: 35,
             image: "/images/drinking-shop/yogurt-pipo-jelly.png",
             description: {
               en: "Creamy yogurt smoothie with chewy Pipo jelly",
@@ -245,8 +242,7 @@ export const restaurantData = {
             customization: {
               iceLevel: ["no-ice", "less-ice", "normal-ice", "extra-ice"],
               sweetness: ["no-sugar", "25%", "50%", "75%", "100%"],
-              size: ["regular", "large"],
-              extras: ["extra-jelly"]
+              size: ["regular"]
             },
             tags: ["yogurt", "jelly", "healthy"]
           },
@@ -267,7 +263,7 @@ export const restaurantData = {
             customization: {
               iceLevel: ["no-ice", "less-ice", "normal-ice", "extra-ice"],
               sweetness: ["no-sugar", "25%", "50%", "75%", "100%"],
-              size: ["regular", "large"]
+              size: ["regular"]
             },
             tags: ["dairy", "fruit", "popular"]
           },
@@ -278,7 +274,7 @@ export const restaurantData = {
               th: "โอวัลตินปั่นภูเขาไฟ",
               zh: "阿华田火山奶昔"
             },
-            price: 42,
+            price: 35,
             image: "/images/drinking-shop/ovaltine-volcano.png",
             description: {
               en: "Rich Ovaltine smoothie with volcanic presentation",
@@ -288,8 +284,7 @@ export const restaurantData = {
             customization: {
               iceLevel: ["no-ice", "less-ice", "normal-ice", "extra-ice"],
               sweetness: ["no-sugar", "25%", "50%", "75%", "100%"],
-              size: ["regular", "large"],
-              extras: ["whipped-cream", "chocolate-drizzle"]
+              size: ["regular"]
             },
             tags: ["chocolate", "specialty", "signature"]
           },
@@ -300,7 +295,7 @@ export const restaurantData = {
               th: "นมสดปั่นคิทแคท",
               zh: "鲜奶奇巧"
             },
-            price: 38,
+            price: 35,
             image: "/images/drinking-shop/fresh-milk-kitkat.png",
             description: {
               en: "Fresh milk blended with crunchy KitKat pieces",
@@ -310,8 +305,7 @@ export const restaurantData = {
             customization: {
               iceLevel: ["no-ice", "less-ice", "normal-ice", "extra-ice"],
               sweetness: ["no-sugar", "25%", "50%", "75%", "100%"],
-              size: ["regular", "large"],
-              extras: ["extra-kitkat", "whipped-cream"]
+              size: ["regular"]
             },
             tags: ["dairy", "chocolate", "popular"]
           },
@@ -322,7 +316,7 @@ export const restaurantData = {
               th: "มอคค่าปั่น",
               zh: "摩卡奶昔"
             },
-            price: 40,
+            price: 35,
             image: "/images/drinking-shop/mocha-milk.png",
             description: {
               en: "Rich coffee and chocolate blend smoothie",
@@ -332,8 +326,7 @@ export const restaurantData = {
             customization: {
               iceLevel: ["no-ice", "less-ice", "normal-ice", "extra-ice"],
               sweetness: ["no-sugar", "25%", "50%", "75%", "100%"],
-              size: ["regular", "large"],
-              extras: ["extra-shot", "whipped-cream"]
+              size: ["regular"]
             },
             tags: ["coffee", "chocolate", "energizing"]
           },
@@ -344,7 +337,7 @@ export const restaurantData = {
               th: "แดงมะนาวโซดา",
               zh: "红柠檬苏打"
             },
-            price: 28,
+            price: 35,
             image: "/images/drinking-shop/red-lime-soda.png",
             description: {
               en: "Refreshing red lime soda with fizzy bubbles",
@@ -354,7 +347,7 @@ export const restaurantData = {
             customization: {
               iceLevel: ["no-ice", "less-ice", "normal-ice", "extra-ice"],
               sweetness: ["no-sugar", "25%", "50%", "75%", "100%"],
-              size: ["regular", "large"]
+              size: ["regular"]
             },
             tags: ["soda", "citrus", "refreshing"]
           },
@@ -365,7 +358,7 @@ export const restaurantData = {
               th: "ชามะนาว",
               zh: "柠檬茶"
             },
-            price: 25,
+            price: 35,
             image: "/images/drinking-shop/lemon-tea.png",
             description: {
               en: "Classic tea with fresh lemon",
@@ -375,7 +368,7 @@ export const restaurantData = {
             customization: {
               iceLevel: ["no-ice", "less-ice", "normal-ice", "extra-ice"],
               sweetness: ["no-sugar", "25%", "50%", "75%", "100%"],
-              size: ["regular", "large"]
+              size: ["regular"]
             },
             tags: ["tea", "citrus", "classic"]
           },
@@ -386,7 +379,7 @@ export const restaurantData = {
               th: "ไมโล",
               zh: "美禄"
             },
-            price: 30,
+            price: 35,
             image: "/images/drinking-shop/milo.png",
             description: {
               en: "Classic chocolate malt drink",
@@ -396,7 +389,7 @@ export const restaurantData = {
             customization: {
               iceLevel: ["no-ice", "less-ice", "normal-ice", "extra-ice"],
               sweetness: ["no-sugar", "25%", "50%", "75%", "100%"],
-              size: ["regular", "large"]
+              size: ["regular"]
             },
             tags: ["chocolate", "malt", "energizing"]
           }
@@ -417,7 +410,7 @@ export const restaurantData = {
               th: "น้ำส้มปั่น",
               zh: "橙汁奶昔"
             },
-            price: 30,
+            price: 35,
             image: "/images/drinking-shop/orange-smoothie.png",
             description: {
               en: "Fresh orange smoothie",
@@ -427,7 +420,7 @@ export const restaurantData = {
             customization: {
               iceLevel: ["no-ice", "less-ice", "normal-ice", "extra-ice"],
               sweetness: ["no-sugar", "25%", "50%", "75%", "100%"],
-              size: ["regular", "large"]
+              size: ["regular"]
             },
             tags: ["fruit", "vitamin-c", "healthy"]
           },
@@ -438,7 +431,7 @@ export const restaurantData = {
               th: "น้ำกล้วย",
               zh: "香蕉奶昔"
             },
-            price: 28,
+            price: 35,
             image: "/images/drinking-shop/banana-smoothie.png",
             description: {
               en: "Creamy banana smoothie",
@@ -448,7 +441,7 @@ export const restaurantData = {
             customization: {
               iceLevel: ["no-ice", "less-ice", "normal-ice", "extra-ice"],
               sweetness: ["no-sugar", "25%", "50%", "75%", "100%"],
-              size: ["regular", "large"]
+              size: ["regular"]
             },
             tags: ["fruit", "creamy", "potassium"]
           },
@@ -459,7 +452,7 @@ export const restaurantData = {
               th: "แตงโมปั่น",
               zh: "西瓜奶昔"
             },
-            price: 25,
+            price: 35,
             image: "/images/drinking-shop/watermelon-smoothie.png",
             description: {
               en: "Refreshing watermelon smoothie",
@@ -469,7 +462,7 @@ export const restaurantData = {
             customization: {
               iceLevel: ["no-ice", "less-ice", "normal-ice", "extra-ice"],
               sweetness: ["no-sugar", "25%", "50%", "75%", "100%"],
-              size: ["regular", "large"]
+              size: ["regular"]
             },
             tags: ["fruit", "refreshing", "hydrating"]
           },
@@ -480,7 +473,7 @@ export const restaurantData = {
               th: "มะนาว+น้ำผึ้ง",
               zh: "柠檬蜂蜜奶昔"
             },
-            price: 32,
+            price: 35,
             image: "/images/drinking-shop/lime-honey.png",
             description: {
               en: "Tangy lime with sweet honey",
@@ -490,7 +483,7 @@ export const restaurantData = {
             customization: {
               iceLevel: ["no-ice", "less-ice", "normal-ice", "extra-ice"],
               sweetness: ["no-sugar", "25%", "50%", "75%", "100%"],
-              size: ["regular", "large"]
+              size: ["regular"]
             },
             tags: ["citrus", "honey", "healthy", "vitamin-c"]
           },
@@ -501,7 +494,7 @@ export const restaurantData = {
               th: "น้ำมะนาวปั่น",
               zh: "柠檬奶昔"
             },
-            price: 25,
+            price: 35,
             image: "/images/drinking-shop/lime-smoothie.png",
             description: {
               en: "Fresh lime smoothie",
@@ -511,7 +504,7 @@ export const restaurantData = {
             customization: {
               iceLevel: ["no-ice", "less-ice", "normal-ice", "extra-ice"],
               sweetness: ["no-sugar", "25%", "50%", "75%", "100%"],
-              size: ["regular", "large"]
+              size: ["regular"]
             },
             tags: ["citrus", "tangy", "vitamin-c"]
           },
@@ -522,7 +515,7 @@ export const restaurantData = {
               th: "แอปเปิ้ลปั่น",
               zh: "苹果奶昔"
             },
-            price: 30,
+            price: 35,
             image: "/images/drinking-shop/apple-smoothie.png",
             description: {
               en: "Fresh apple smoothie",
@@ -532,7 +525,7 @@ export const restaurantData = {
             customization: {
               iceLevel: ["no-ice", "less-ice", "normal-ice", "extra-ice"],
               sweetness: ["no-sugar", "25%", "50%", "75%", "100%"],
-              size: ["regular", "large"]
+              size: ["regular"]
             },
             tags: ["fruit", "fiber", "healthy"]
           },
@@ -553,7 +546,7 @@ export const restaurantData = {
             customization: {
               iceLevel: ["no-ice", "less-ice", "normal-ice", "extra-ice"],
               sweetness: ["no-sugar", "25%", "50%", "75%", "100%"],
-              size: ["regular", "large"]
+              size: ["regular"]
             },
             tags: ["fruit", "berry", "popular"]
           },
@@ -564,7 +557,7 @@ export const restaurantData = {
               th: "สตอเบอร์รี่สมูทตี้นมสด",
               zh: "草莓鲜奶奶昔"
             },
-            price: 40,
+            price: 35,
             image: "/images/drinking-shop/strawberry-milk-smoothie.png",
             description: {
               en: "Strawberry smoothie with creamy fresh milk",
@@ -574,7 +567,7 @@ export const restaurantData = {
             customization: {
               iceLevel: ["no-ice", "less-ice", "normal-ice", "extra-ice"],
               sweetness: ["no-sugar", "25%", "50%", "75%", "100%"],
-              size: ["regular", "large"]
+              size: ["regular"]
             },
             tags: ["fruit", "dairy", "creamy", "premium"]
           },
@@ -585,7 +578,7 @@ export const restaurantData = {
               th: "กล้วยปั่นโกโก้นมสด",
               zh: "香蕉可可鲜奶"
             },
-            price: 38,
+            price: 35,
             image: "/images/drinking-shop/banana-cocoa-milk.png",
             description: {
               en: "Banana smoothie with cocoa and fresh milk",
@@ -595,7 +588,7 @@ export const restaurantData = {
             customization: {
               iceLevel: ["no-ice", "less-ice", "normal-ice", "extra-ice"],
               sweetness: ["no-sugar", "25%", "50%", "75%", "100%"],
-              size: ["regular", "large"]
+              size: ["regular"]
             },
             tags: ["fruit", "chocolate", "dairy", "creamy"]
           },
@@ -606,7 +599,7 @@ export const restaurantData = {
               th: "กล้วยปั่นโอริโอ้",
               zh: "香蕉奥利奥奶昔"
             },
-            price: 42,
+            price: 35,
             image: "/images/drinking-shop/banana-oreo-smoothie.png",
             description: {
               en: "Banana smoothie with Oreo cookies",
@@ -616,8 +609,7 @@ export const restaurantData = {
             customization: {
               iceLevel: ["no-ice", "less-ice", "normal-ice", "extra-ice"],
               sweetness: ["no-sugar", "25%", "50%", "75%", "100%"],
-              size: ["regular", "large"],
-              extras: ["extra-oreo", "whipped-cream"]
+              size: ["regular"]
             },
             tags: ["fruit", "cookies", "indulgent", "popular"]
           },
@@ -628,7 +620,7 @@ export const restaurantData = {
               th: "น้ำองุ่น",
               zh: "葡萄奶昔"
             },
-            price: 32,
+            price: 35,
             image: "/images/drinking-shop/grape-smoothie.png",
             description: {
               en: "Sweet and refreshing grape smoothie",
@@ -638,7 +630,7 @@ export const restaurantData = {
             customization: {
               iceLevel: ["no-ice", "less-ice", "normal-ice", "extra-ice"],
               sweetness: ["no-sugar", "25%", "50%", "75%", "100%"],
-              size: ["regular", "large"]
+              size: ["regular"]
             },
             tags: ["fruit", "antioxidants", "refreshing"]
           },
@@ -659,7 +651,7 @@ export const restaurantData = {
             customization: {
               iceLevel: ["no-ice", "less-ice", "normal-ice", "extra-ice"],
               sweetness: ["no-sugar", "25%", "50%", "75%", "100%"],
-              size: ["regular", "large"]
+              size: ["regular"]
             },
             tags: ["fruit", "vitamin-c", "healthy", "exotic"]
           },
@@ -670,7 +662,7 @@ export const restaurantData = {
               th: "เสาวรสปั่น",
               zh: "百香果奶昔"
             },
-            price: 38,
+            price: 35,
             image: "/images/drinking-shop/passionfruit-smoothie.png",
             description: {
               en: "Tropical passionfruit smoothie with aromatic flavor",
@@ -680,7 +672,7 @@ export const restaurantData = {
             customization: {
               iceLevel: ["no-ice", "less-ice", "normal-ice", "extra-ice"],
               sweetness: ["no-sugar", "25%", "50%", "75%", "100%"],
-              size: ["regular", "large"]
+              size: ["regular"]
             },
             tags: ["tropical", "aromatic", "exotic", "vitamin-c"]
           },
@@ -691,7 +683,7 @@ export const restaurantData = {
               th: "บลูเบอร์รี่ปั่น",
               zh: "蓝莓奶昔"
             },
-            price: 40,
+            price: 35,
             image: "/images/drinking-shop/blueberry-smoothie.png",
             description: {
               en: "Rich antioxidant blueberry smoothie",
@@ -701,7 +693,7 @@ export const restaurantData = {
             customization: {
               iceLevel: ["no-ice", "less-ice", "normal-ice", "extra-ice"],
               sweetness: ["no-sugar", "25%", "50%", "75%", "100%"],
-              size: ["regular", "large"]
+              size: ["regular"]
             },
             tags: ["berry", "antioxidants", "healthy", "superfood"]
           },
@@ -722,7 +714,7 @@ export const restaurantData = {
             customization: {
               iceLevel: ["no-ice", "less-ice", "normal-ice", "extra-ice"],
               sweetness: ["no-sugar", "25%", "50%", "75%", "100%"],
-              size: ["regular", "large"]
+              size: ["regular"]
             },
             tags: ["tropical", "creamy", "natural", "coconut"]
           },
@@ -733,7 +725,7 @@ export const restaurantData = {
               th: "สตอเบอร์รี่โยเกิร์ต",
               zh: "草莓酸奶奶昔"
             },
-            price: 38,
+            price: 35,
             image: "/images/drinking-shop/strawberry-yogurt-smoothie.png",
             description: {
               en: "Healthy strawberry yogurt smoothie with probiotics",
@@ -743,7 +735,7 @@ export const restaurantData = {
             customization: {
               iceLevel: ["no-ice", "less-ice", "normal-ice", "extra-ice"],
               sweetness: ["no-sugar", "25%", "50%", "75%", "100%"],
-              size: ["regular", "large"]
+              size: ["regular"]
             },
             tags: ["yogurt", "berry", "healthy", "probiotics"]
           },
@@ -764,7 +756,7 @@ export const restaurantData = {
             customization: {
               iceLevel: ["no-ice", "less-ice", "normal-ice", "extra-ice"],
               sweetness: ["no-sugar", "25%", "50%", "75%", "100%"],
-              size: ["regular", "large"]
+              size: ["regular"]
             },
             tags: ["herbal", "natural", "colorful", "unique"]
           },
@@ -775,7 +767,7 @@ export const restaurantData = {
               th: "กล้วยปั่นนมคาราเมล",
               zh: "香蕉焦糖奶昔"
             },
-            price: 42,
+            price: 35,
             image: "/images/drinking-shop/banana-caramel-smoothie.png",
             description: {
               en: "Rich banana smoothie with sweet caramel swirl",
@@ -785,8 +777,7 @@ export const restaurantData = {
             customization: {
               iceLevel: ["no-ice", "less-ice", "normal-ice", "extra-ice"],
               sweetness: ["no-sugar", "25%", "50%", "75%", "100%"],
-              size: ["regular", "large"],
-              extras: ["extra-caramel", "whipped-cream"]
+              size: ["regular"]
             },
             tags: ["fruit", "caramel", "indulgent", "sweet"]
           }
@@ -796,5 +787,5 @@ export const restaurantData = {
   }
 };
 
-export const defaultLanguage = 'en';
+export const defaultLanguage = 'th';
 export const supportedLanguages = ['en', 'th', 'zh'];
