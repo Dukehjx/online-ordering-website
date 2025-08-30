@@ -59,7 +59,7 @@ const AppContent = () => {
             <div className="flex items-center min-w-0 flex-1">
               <img 
                 src="/logo.png" 
-                alt="My Smoothies Logo" 
+                alt="Online Ordering System Logo" 
                 className="w-8 h-8 sm:w-10 sm:h-10 mr-2 sm:mr-3 flex-shrink-0"
               />
               <div className="min-w-0">
@@ -164,7 +164,7 @@ const AppContent = () => {
             <div className="flex items-center justify-center mb-4">
               <img 
                 src="/logo.png" 
-                alt="My Smoothies Logo" 
+                alt="Online Ordering System Logo" 
                 className="w-12 h-12 mr-3"
               />
               <h3 className={`text-lg font-semibold text-gray-900 ${getLanguageClass()}`}>
@@ -175,7 +175,7 @@ const AppContent = () => {
               {currentLanguage === 'zh' ? '美味饮品，新鲜制作' : currentLanguage === 'th' ? 'เครื่องดื่มอร่อย ทำใหม่สด' : 'Delicious drinks, freshly made'}
             </p>
             <div className="text-sm text-gray-500">
-              {currentLanguage === 'zh' ? '© 2024 在线菜单系统' : currentLanguage === 'th' ? '© 2024 ระบบเมนูออนไลน์' : '© 2024 Online Menu System'}
+              {currentLanguage === 'zh' ? '© 2024 在线订餐系统' : currentLanguage === 'th' ? '© 2024 ระบบสั่งอาหารออนไลน์' : '© 2024 Online Ordering System'}
             </div>
           </div>
         </div>

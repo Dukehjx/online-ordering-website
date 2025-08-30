@@ -1,24 +1,81 @@
-# Restaurant Online Menu Website
+# Online Ordering System Platform
 
-A modern, responsive online menu website built with React.js, Vite, and Tailwind CSS. Features multi-language support and mobile-first design.
+A modern, scalable online ordering platform built with React.js, Vite, and Tailwind CSS. This system serves multiple restaurants with multi-language support, cart functionality, and restaurant management features.
 
-## Features
+## Platform Overview
 
-- **Lightning-fast development** - Powered by Vite for instant HMR
-- **Mobile-first responsive design** - Optimized for all screen sizes
-- **Multi-language support** - Thai, English, and Chinese
-- **Category-based menu browsing** - Easy navigation with sidebar categories
-- **Dish customization** - Ice level, sweetness, size, and add-ons
-- **Expandable architecture** - Easy to add more restaurants
-- **Accessible design** - Large photos, clear text, intuitive navigation
-- **No backend required** - Menu content managed via structured data files
-- **Modern build tooling** - Vite for fast builds and development
+This is a **multi-restaurant online ordering platform** that provides:
+- **Customer Interface**: Browse menus, customize orders, manage cart, place orders
+- **Restaurant Management**: Order processing interface with language selection
+- **Platform Features**: Multi-language support, responsive design, scalable architecture
 
-## Demo
+### Current Restaurant: My Smoothies (มาย สมูทตี้)
+The platform currently features "My Smoothies" as a demonstration restaurant, but is designed to support unlimited restaurants.
 
-The website displays a drinking shop menu with categories:
-- Milk & Tea (นมและชา / 奶茶系列)
-- Smoothies (น้ำผลไม้ปั่น / 鲜榨果昔)
+## Key Features
+
+### 🛒 **Complete Ordering System**
+- **Shopping Cart**: Add items, adjust quantities, view totals
+- **Order Customization**: Ice level, sweetness preferences
+- **Multi-language Cart**: Supports Thai, English, Chinese
+- **Order Finalization**: Restaurant owner interface with language selection
+
+### 🌐 **Multi-Language Platform**
+- **Default Language**: Thai (th)
+- **Supported Languages**: Thai, English, Chinese
+- **Dynamic Translation**: All content translates in real-time
+- **Restaurant Interface**: Language selection for order display
+
+### 🏪 **Multi-Restaurant Architecture**
+- **Scalable Design**: Easy to add new restaurants
+- **Restaurant-Specific**: Individual menus, branding, settings
+- **Centralized Platform**: Unified ordering system for all restaurants
+- **Flexible Menu Structure**: Categories, items, customizations
+
+### 📱 **Mobile-First Design**
+- **Responsive Layout**: Optimized for all screen sizes
+- **Touch-Friendly**: Large buttons, easy navigation
+- **Fast Performance**: Powered by Vite for instant loading
+
+### 🎨 **Professional Branding**
+- **Platform Logo**: Represents the ordering system
+- **Consistent Design**: Orange theme throughout
+- **Restaurant Branding**: Individual restaurant names and details
+
+## System Architecture
+
+```
+Online Ordering Platform
+├── Customer Interface
+│   ├── Restaurant Menu Browsing
+│   ├── Item Customization
+│   ├── Shopping Cart Management
+│   └── Order Placement
+├── Restaurant Management
+│   ├── Order Processing Interface
+│   ├── Multi-language Order Display
+│   └── Order Status Management
+└── Platform Administration
+    ├── Restaurant Management
+    ├── Menu Configuration
+    └── System Settings
+```
+
+## Current Implementation
+
+### Restaurant: My Smoothies
+- **Categories**: Milk & Tea, Smoothies
+- **Pricing**: ฿35 for all items (Thai Baht)
+- **Customizations**: Ice level, sweetness (no size options, no add-ons)
+- **Languages**: Thai (default), English, Chinese
+
+### Platform Features Implemented
+- ✅ Multi-restaurant data structure
+- ✅ Complete cart functionality
+- ✅ Order finalization interface
+- ✅ Language switching
+- ✅ Responsive design
+- ✅ Restaurant owner interface
 
 ## Setup Instructions
 
@@ -27,141 +84,165 @@ The website displays a drinking shop menu with categories:
    npm install
    ```
 
-2. **Start the development server**:
+2. **Add Platform Logo**:
+   - Save your logo as `logo.png` in the `public/` directory
+   - The logo represents the ordering system platform
+
+3. **Start development server**:
    ```bash
    npm run dev
    ```
 
-3. **Open your browser** to `http://localhost:3000` (will auto-open)
+4. **Open browser** to `http://localhost:3000`
 
 ## Available Scripts
 
-- **`npm run dev`** - Start development server (with HMR)
-- **`npm run build`** - Build for production  
-- **`npm run preview`** - Preview production build locally
+- **`npm run dev`** - Start development server with HMR
+- **`npm run build`** - Build for production
+- **`npm run preview`** - Preview production build
 - **`npm test`** - Run tests with Vitest
 
 ## Project Structure
 
 ```
 src/
-├── components/           # React components
-│   ├── CategorySidebar.jsx
-│   ├── CustomizationModal.jsx
-│   ├── LanguageSwitcher.jsx
-│   └── MenuItem.jsx
-├── contexts/            # React contexts
-│   └── LanguageContext.jsx
-├── data/               # Menu data
-│   └── menuData.js     # Restaurant and menu structure
-├── test/               # Test setup
-│   └── setup.js        # Testing configuration  
-├── App.jsx             # Main application component
-├── index.css           # Global styles with Tailwind
-└── main.jsx            # Application entry point (Vite)
+├── components/              # React components
+│   ├── CategorySidebar.jsx  # Menu category navigation
+│   ├── CustomizationModal.jsx # Order customization
+│   ├── MenuItem.jsx         # Individual menu items
+│   ├── Cart.jsx            # Shopping cart interface
+│   ├── FinalizeOrder.jsx   # Restaurant owner interface
+│   └── LanguageSwitcher.jsx # Language selection
+├── contexts/               # React contexts
+│   ├── LanguageContext.jsx # Multi-language support
+│   └── CartContext.jsx     # Cart state management
+├── data/                   # Platform data
+│   └── menuData.js        # Restaurant and menu data
+├── App.jsx                # Main application
+├── index.css              # Global styles
+└── main.jsx               # Application entry point
 ```
 
-## Adding Menu Content
+## Adding New Restaurants
 
-### Edit Menu Items
+To add a new restaurant to the platform:
 
-Menu content is managed in `src/data/menuData.js`. Each menu item includes:
-
-- **Multi-language names and descriptions**
-- **Pricing**
-- **Customization options** (size, ice level, sweetness, extras)
-- **Tags** (for filtering and badges)
-- **Images** (placeholder paths for now)
-
-### Add New Restaurant
-
-To add a new restaurant, add an entry to the `restaurantData` object:
+1. **Add restaurant data** in `src/data/menuData.js`:
 
 ```javascript
-"new-restaurant-id": {
-  id: "new-restaurant-id",
+"restaurant-id": {
+  id: "restaurant-id",
   name: {
-    en: "New Restaurant",
-    th: "ร้านใหม่",
-    zh: "新餐厅"
+    en: "Restaurant Name",
+    th: "ชื่อร้านภาษาไทย",
+    zh: "餐厅中文名"
   },
   categories: [
-    // Add categories and items
+    {
+      id: "category-id",
+      name: {
+        en: "Category Name",
+        th: "หมวดหมู่",
+        zh: "类别"
+      },
+      items: [
+        // Menu items
+      ]
+    }
   ]
 }
 ```
 
-### Customization Options
+2. **Update restaurant selection** in `App.jsx` (future enhancement)
+3. **Configure restaurant-specific settings** (pricing, customizations)
 
-Each menu item can include these customization options:
+## Menu Item Structure
 
-- **iceLevel**: `["no-ice", "less-ice", "normal-ice", "extra-ice"]`
-- **sweetness**: `["no-sugar", "25%", "50%", "75%", "100%"]`
-- **size**: `["regular", "large"]`
-- **extras**: `["extra-oreo", "extra-jelly", "whipped-cream"]`
-
-## Language Support
-
-The website supports three languages:
-- **English** (en) - Default
-- **Thai** (th) - With Sarabun font
-- **Chinese** (zh) - With Noto Sans SC font
-
-### Adding Translations
-
-All text content uses multi-language objects:
+Each menu item includes:
 
 ```javascript
-name: {
-  en: "English Name",
-  th: "ชื่อภาษาไทย",
-  zh: "中文名称"
+{
+  id: "item-id",
+  name: { en: "Name", th: "ชื่อ", zh: "名称" },
+  price: 35, // Thai Baht
+  image: "/images/restaurant/item.png",
+  description: { en: "Description", th: "คำอธิบาย", zh: "描述" },
+  customization: {
+    iceLevel: ["no-ice", "less-ice", "normal-ice", "extra-ice"],
+    sweetness: ["no-sugar", "25%", "50%", "75%", "100%"],
+    size: ["regular"] // Currently only regular size
+  },
+  tags: ["tag1", "tag2"]
 }
 ```
 
-## Styling
+## Platform Configuration
 
-The project uses Tailwind CSS with custom configurations:
+### Language Settings
+- **Default Language**: Thai (`th`)
+- **Supported Languages**: `['en', 'th', 'zh']`
+- **Font Support**: Sarabun (Thai), Noto Sans SC (Chinese)
 
-- **Primary color**: Orange theme matching food delivery apps
-- **Typography**: Font families for Thai and Chinese languages
-- **Components**: Pre-built classes for menu items, buttons, and badges
-- **Responsive**: Mobile-first breakpoints
+### Currency Settings
+- **Primary Currency**: Thai Baht (฿)
+- **All Pricing**: Displayed in ฿ regardless of language
 
-## Future Enhancements
+### Order System
+- **Cart Management**: Add, remove, adjust quantities
+- **Order Processing**: Restaurant interface with language selection
+- **Order Display**: Customizable language for restaurant staff
 
-This website is designed to be easily expandable:
+## Future Platform Enhancements
 
-1. **Multi-restaurant support** - Add restaurant selection
-2. **Cart functionality** - Add items to cart and checkout
-3. **Image upload system** - Replace placeholder images
-4. **Admin panel** - Web interface for menu management
-5. **Order placement** - Integration with ordering system
-6. **User accounts** - Customer profiles and order history
+### Phase 1: Multi-Restaurant Support
+- [ ] Restaurant selection interface
+- [ ] Restaurant-specific branding
+- [ ] Individual restaurant dashboards
+
+### Phase 2: Advanced Features
+- [ ] User accounts and authentication
+- [ ] Order history and tracking
+- [ ] Payment integration
+- [ ] Delivery management
+
+### Phase 3: Platform Administration
+- [ ] Restaurant onboarding system
+- [ ] Menu management interface
+- [ ] Analytics and reporting
+- [ ] Commission and billing system
 
 ## Technologies Used
 
 - **React.js 18** - Frontend framework
-- **Vite 5** - Lightning-fast build tool and dev server
-- **Tailwind CSS** - Utility-first CSS framework
-- **Vitest** - Fast unit testing framework
-- **Google Fonts** - Sarabun (Thai) and Noto Sans SC (Chinese)
-- **React Context API** - State management for language switching
+- **Vite 5** - Build tool and dev server
+- **Tailwind CSS** - Styling framework
+- **React Context API** - State management
+- **Vitest** - Testing framework
+- **Google Fonts** - Multi-language typography
 
-## Browser Support
+## Platform Logo
 
-- Modern browsers (Chrome, Firefox, Safari, Edge)
-- Mobile browsers (iOS Safari, Android Chrome)
-- Responsive design from 320px to desktop
+The platform logo (saved as `public/logo.png`) represents the online ordering system and appears in:
+- Header navigation
+- Footer branding
+- Browser favicon
+- System identification
 
 ## Contributing
 
 1. Fork the repository
 2. Create a feature branch
-3. Make your changes
-4. Test on multiple devices and languages
+3. Implement new restaurants or features
+4. Test across all languages and devices
 5. Submit a pull request
 
 ## License
 
-This project is licensed under the MIT License.
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+---
+
+**Platform Status**: Currently serving 1 restaurant (My Smoothies)  
+**Target**: Multi-restaurant online ordering platform  
+**Languages**: Thai (default), English, Chinese  
+**Currency**: Thai Baht (฿)
