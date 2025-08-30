@@ -1,6 +1,6 @@
-# Online Ordering System Platform
+# SoiMenu - Online Ordering Platform
 
-A modern, scalable online ordering platform built with React.js, Vite, and Tailwind CSS. This system serves multiple restaurants with multi-language support, cart functionality, and restaurant management features.
+A modern, scalable online ordering platform built with React.js, Vite, and Tailwind CSS. SoiMenu serves multiple restaurants with multi-language support, cart functionality, and restaurant management features.
 
 ## Platform Overview
 
@@ -10,7 +10,7 @@ This is a **multi-restaurant online ordering platform** that provides:
 - **Platform Features**: Multi-language support, responsive design, scalable architecture
 
 ### Current Restaurant: My Smoothies (มาย สมูทตี้)
-The platform currently features "My Smoothies" as a demonstration restaurant, but is designed to support unlimited restaurants.
+SoiMenu currently features "My Smoothies" as a demonstration restaurant, but is designed to support unlimited restaurants.
 
 ## Key Features
 
@@ -45,7 +45,7 @@ The platform currently features "My Smoothies" as a demonstration restaurant, bu
 ## System Architecture
 
 ```
-Online Ordering Platform
+SoiMenu Platform
 ├── Customer Interface
 │   ├── Restaurant Menu Browsing
 │   ├── Item Customization
@@ -84,9 +84,9 @@ Online Ordering Platform
    npm install
    ```
 
-2. **Add Platform Logo**:
+2. **Add SoiMenu Logo**:
    - Save your logo as `logo.png` in the `public/` directory
-   - The logo represents the ordering system platform
+   - The logo represents the SoiMenu platform
 
 3. **Start development server**:
    ```bash
@@ -125,7 +125,7 @@ src/
 
 ## Adding New Restaurants
 
-To add a new restaurant to the platform:
+To add a new restaurant to SoiMenu:
 
 1. **Add restaurant data** in `src/data/menuData.js`:
 
@@ -220,9 +220,9 @@ Each menu item includes:
 - **Vitest** - Testing framework
 - **Google Fonts** - Multi-language typography
 
-## Platform Logo
+## SoiMenu Logo
 
-The platform logo (saved as `public/logo.png`) represents the online ordering system and appears in:
+The SoiMenu logo (saved as `public/logo.png`) represents the ordering platform and appears in:
 - Header navigation
 - Footer branding
 - Browser favicon
@@ -242,7 +242,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ---
 
-**Platform Status**: Currently serving 1 restaurant (My Smoothies)  
+**SoiMenu Status**: Currently serving 1 restaurant (My Smoothies)  
 **Target**: Multi-restaurant online ordering platform  
 **Languages**: Thai (default), English, Chinese  
 **Currency**: Thai Baht (฿)
