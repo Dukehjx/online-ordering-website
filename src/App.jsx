@@ -44,6 +44,10 @@ const AppContent = () => {
         return 'font-thai';
       case 'zh':
         return 'font-chinese';
+      case 'ko':
+        return 'font-korean';
+      case 'ja':
+        return 'font-japanese';
       default:
         return '';
     }
@@ -67,7 +71,7 @@ const AppContent = () => {
                   {getText(restaurant.name)}
                 </h1>
                 <p className="text-xs sm:text-sm text-gray-500 hidden sm:block">
-                  {currentLanguage === 'zh' ? '在线菜单' : currentLanguage === 'th' ? 'เมนูออนไลน์' : 'Online Menu'}
+                  {currentLanguage === 'zh' ? '在线菜单' : currentLanguage === 'th' ? 'เมนูออนไลน์' : currentLanguage === 'ko' ? '온라인 메뉴' : currentLanguage === 'ja' ? 'オンラインメニュー' : 'Online Menu'}
                 </p>
               </div>
             </div>
@@ -112,7 +116,7 @@ const AppContent = () => {
               {getText(currentCategory?.name)}
             </h2>
             <p className="text-sm sm:text-base text-gray-600">
-              {currentCategory?.items?.length || 0} {currentLanguage === 'zh' ? '种商品' : currentLanguage === 'th' ? 'รายการ' : 'items'}
+              {currentCategory?.items?.length || 0} {currentLanguage === 'zh' ? '种商品' : currentLanguage === 'th' ? 'รายการ' : currentLanguage === 'ko' ? '개 상품' : currentLanguage === 'ja' ? '個の商品' : 'items'}
             </p>
           </div>
 
@@ -134,10 +138,10 @@ const AppContent = () => {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14-7l2 8m0 0l-2 8m2-8H9l4 4-4-4M5 4l2 8L5 20" />
               </svg>
               <h3 className={`text-lg font-medium text-gray-900 mb-2 ${getLanguageClass()}`}>
-                {currentLanguage === 'zh' ? '暂无商品' : currentLanguage === 'th' ? 'ไม่มีรายการ' : 'No items available'}
+                {currentLanguage === 'zh' ? '暂无商品' : currentLanguage === 'th' ? 'ไม่มีรายการ' : currentLanguage === 'ko' ? '상품이 없습니다' : currentLanguage === 'ja' ? '商品がありません' : 'No items available'}
               </h3>
               <p className={`text-gray-500 ${getLanguageClass()}`}>
-                {currentLanguage === 'zh' ? '这个分类下暂时没有商品' : currentLanguage === 'th' ? 'ไม่มีรายการในหมวดหมู่นี้' : 'There are no items in this category yet.'}
+                {currentLanguage === 'zh' ? '这个分类下暂时没有商品' : currentLanguage === 'th' ? 'ไม่มีรายการในหมวดหมู่นี้' : currentLanguage === 'ko' ? '이 카테고리에는 아직 상품이 없습니다.' : currentLanguage === 'ja' ? 'このカテゴリにはまだ商品がありません。' : 'There are no items in this category yet.'}
               </p>
             </div>
           )}
@@ -172,10 +176,10 @@ const AppContent = () => {
               </h3>
             </div>
             <p className={`text-gray-600 mb-4 ${getLanguageClass()}`}>
-              {currentLanguage === 'zh' ? '美味饮品，新鲜制作' : currentLanguage === 'th' ? 'เครื่องดื่มอร่อย ทำใหม่สด' : 'Delicious drinks, freshly made'}
+              {currentLanguage === 'zh' ? '美味饮品，新鲜制作' : currentLanguage === 'th' ? 'เครื่องดื่มอร่อย ทำใหม่สด' : currentLanguage === 'ko' ? '맛있는 음료, 신선하게 제조' : currentLanguage === 'ja' ? '美味しいドリンク、新鮮に作りたて' : 'Delicious drinks, freshly made'}
             </p>
             <div className="text-sm text-gray-500">
-              {currentLanguage === 'zh' ? '© 2024 SoiMenu' : currentLanguage === 'th' ? '© 2024 SoiMenu' : '© 2024 SoiMenu'}
+              {currentLanguage === 'zh' ? '© 2024 SoiMenu' : currentLanguage === 'th' ? '© 2024 SoiMenu' : currentLanguage === 'ko' ? '© 2024 SoiMenu' : currentLanguage === 'ja' ? '© 2024 SoiMenu' : '© 2024 SoiMenu'}
             </div>
           </div>
         </div>

@@ -22,6 +22,8 @@ module.exports = {
       fontFamily: {
         thai: ['Sarabun', 'sans-serif'],
         chinese: ['Noto Sans SC', 'sans-serif'],
+        korean: ['Noto Sans KR', 'sans-serif'],
+        japanese: ['Noto Sans JP', 'sans-serif'],
       },
     },
   },

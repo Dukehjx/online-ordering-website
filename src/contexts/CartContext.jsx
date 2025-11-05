@@ -23,7 +23,7 @@ export const CartProvider = ({ children }) => {
       basePrice: item.price,
       customization,
       quantity: 1,
-      totalPrice: calculateItemPrice(item.price, customization)
+      unitPrice: calculateItemPrice(item.price, customization)
     };
 
     setCartItems(prev => [...prev, cartItem]);
@@ -42,7 +42,7 @@ export const CartProvider = ({ children }) => {
     setCartItems(prev => 
       prev.map(item => 
         item.id === cartItemId 
-          ? { ...item, quantity, totalPrice: item.totalPrice / item.quantity * quantity }
+          ? { ...item, quantity }
           : item
       )
     );
@@ -58,7 +58,7 @@ export const CartProvider = ({ children }) => {
   };
 
   const getCartTotal = () => {
-    return cartItems.reduce((total, item) => total + (item.totalPrice * item.quantity), 0);
+    return cartItems.reduce((total, item) => total + (item.unitPrice * item.quantity), 0);
   };
 
   const getCartItemCount = () => {

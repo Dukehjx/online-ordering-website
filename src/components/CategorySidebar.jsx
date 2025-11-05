@@ -41,7 +41,7 @@ const CategorySidebar = ({ categories, activeCategory, onCategoryChange }) => {
         <div className="hidden lg:block">
           <div className="p-2 border-b border-gray-100">
             <h2 className={`font-medium text-gray-900 text-sm ${getLanguageClass()}`}>
-              {currentLanguage === 'zh' ? '分类' : currentLanguage === 'th' ? 'หมวดหมู่' : 'Categories'}
+              {currentLanguage === 'zh' ? '分类' : currentLanguage === 'th' ? 'หมวดหมู่' : currentLanguage === 'ko' ? '카테고리' : currentLanguage === 'ja' ? 'カテゴリ' : 'Categories'}
             </h2>
           </div>
           <nav className="py-1">

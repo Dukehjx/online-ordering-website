@@ -7,13 +7,17 @@ const LanguageSwitcher = () => {
   const languageNames = {
     en: 'EN',
     th: 'TH',
-    zh: 'CN'
+    zh: 'CN',
+    ko: 'KO',
+    ja: 'JP'
   };
 
   const fullLanguageNames = {
     en: 'English',
     th: 'ไทย',
-    zh: '中文'
+    zh: '中文',
+    ko: '한국어',
+    ja: '日本語'
   };
 
   return (
@@ -26,7 +30,7 @@ const LanguageSwitcher = () => {
             currentLanguage === lang
               ? 'bg-orange-500 text-white shadow-sm'
               : 'text-gray-600 hover:text-orange-500 hover:bg-orange-50'
-          } ${lang === 'th' ? 'font-thai' : lang === 'zh' ? 'font-chinese' : ''}`}
+          } ${lang === 'th' ? 'font-thai' : lang === 'zh' ? 'font-chinese' : lang === 'ko' ? 'font-korean' : lang === 'ja' ? 'font-japanese' : ''}`}
           title={fullLanguageNames[lang]}
         >
           <span className="block sm:hidden">{languageNames[lang]}</span>

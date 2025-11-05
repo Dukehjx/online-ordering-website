@@ -4,7 +4,9 @@ export const restaurantData = {
     name: {
       en: "My Smoothies",
       th: "มาย สมูทตี้",
-      zh: "我的果昔店"
+      zh: "我的果昔店",
+      ko: "마이 스무디",
+      ja: "マイスムージー"
     },
     categories: [
       {
@@ -12,7 +14,9 @@ export const restaurantData = {
         name: {
           en: "Milk & Tea",
           th: "นมและชา",
-          zh: "奶茶系列"
+          zh: "奶茶系列",
+          ko: "우유 & 차",
+          ja: "ミルク&ティー"
         },
         items: [
           {
@@ -20,14 +24,18 @@ export const restaurantData = {
             name: {
               en: "Fresh Milk (blended/iced)",
               th: "นมสดปั่น/เย็น",
-              zh: "鲜奶（搅拌/冰镇）"
+              zh: "鲜奶（搅拌/冰镇）",
+              ko: "신선한 우유 (블렌딩/아이스)",
+              ja: "フレッシュミルク（ブレンド/アイス）"
             },
             price: 35,
             image: "/images/drinking-shop/fresh-milk-blended.png",
             description: {
               en: "Creamy fresh milk served blended or iced",
               th: "นมสดหอมครีมี เสิร์ฟแบบปั่นหรือเย็น",
-              zh: "香浓鲜奶，可选搅拌或冰镇"
+              zh: "香浓鲜奶，可选搅拌或冰镇",
+              ko: "크리미한 신선 우유, 블렌딩 또는 아이스로 제공",
+              ja: "クリーミーなフレッシュミルク、ブレンドまたはアイスで提供"
             },
             customization: {
               iceLevel: ["no-ice", "less-ice", "normal-ice", "extra-ice"],
@@ -41,14 +49,18 @@ export const restaurantData = {
             name: {
               en: "Cocoa",
               th: "โกโก้",
-              zh: "可可"
+              zh: "可可",
+              ko: "코코아",
+              ja: "ココア"
             },
             price: 35,
             image: "/images/drinking-shop/cocoa.png",
             description: {
               en: "Rich chocolate cocoa drink",
               th: "เครื่องดื่มโกโก้รสชาติเข้มข้น",
-              zh: "浓郁巧克力可可饮品"
+              zh: "浓郁巧克力可可饮品",
+              ko: "진한 초콜릿 코코아 음료",
+              ja: "濃厚なチョコレートココアドリンク"
             },
             customization: {
               iceLevel: ["no-ice", "less-ice", "normal-ice", "extra-ice"],
@@ -62,14 +74,18 @@ export const restaurantData = {
             name: {
               en: "Chocolate",
               th: "ช็อคโกแลต",
-              zh: "巧克力"
+              zh: "巧克力",
+              ko: "초콜릿",
+              ja: "チョコレート"
             },
             price: 35,
             image: "/images/drinking-shop/chocolate.png",
             description: {
               en: "Creamy chocolate drink",
               th: "เครื่องดื่มช็อคโกแลตครีมมี่",
-              zh: "奶香巧克力饮品"
+              zh: "奶香巧克力饮品",
+              ko: "크리미한 초콜릿 음료",
+              ja: "クリーミーなチョコレートドリンク"
             },
             customization: {
               iceLevel: ["no-ice", "less-ice", "normal-ice", "extra-ice"],
@@ -83,14 +99,18 @@ export const restaurantData = {
             name: {
               en: "Thai Tea",
               th: "ชาไทย",
-              zh: "泰式奶茶"
+              zh: "泰式奶茶",
+              ko: "타이 티",
+              ja: "タイティー"
             },
             price: 35,
             image: "/images/drinking-shop/thai-tea.png",
             description: {
               en: "Traditional Thai tea with milk",
               th: "ชาไทยแบบดั้งเดิมผสมนม",
-              zh: "传统泰式奶茶"
+              zh: "传统泰式奶茶",
+              ko: "우유를 넣은 전통 타이 차",
+              ja: "ミルク入り伝統タイティー"
             },
             customization: {
               iceLevel: ["no-ice", "less-ice", "normal-ice", "extra-ice"],
@@ -400,7 +420,9 @@ export const restaurantData = {
         name: {
           en: "Smoothies",
           th: "น้ำผลไม้ปั่น",
-          zh: "鲜榨果昔"
+          zh: "鲜榨果昔",
+          ko: "스무디",
+          ja: "スムージー"
         },
         items: [
           {
@@ -788,4 +810,4 @@ export const restaurantData = {
 };
 
 export const defaultLanguage = 'th';
-export const supportedLanguages = ['en', 'th', 'zh'];
+export const supportedLanguages = ['en', 'th', 'zh', 'ko', 'ja'];

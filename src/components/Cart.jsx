@@ -16,6 +16,10 @@ const Cart = ({ isOpen, onClose }) => {
         return 'font-thai';
       case 'zh':
         return 'font-chinese';
+      case 'ko':
+        return 'font-korean';
+      case 'ja':
+        return 'font-japanese';
       default:
         return '';
     }
@@ -32,21 +36,21 @@ const Cart = ({ isOpen, onClose }) => {
     
     if (customization.iceLevel) {
       const iceTexts = {
-        'no-ice': { en: 'No Ice', th: 'ไม่ใส่น้ำแข็ง', zh: '去冰' },
-        'less-ice': { en: 'Less Ice', th: 'น้ำแข็งน้อย', zh: '少冰' },
-        'normal-ice': { en: 'Normal Ice', th: 'น้ำแข็งปกติ', zh: '正常冰' },
-        'extra-ice': { en: 'Extra Ice', th: 'น้ำแข็งเยอะ', zh: '加冰' }
+        'no-ice': { en: 'No Ice', th: 'ไม่ใส่น้ำแข็ง', zh: '去冰', ko: '얼음 없음', ja: '氷なし' },
+        'less-ice': { en: 'Less Ice', th: 'น้ำแข็งน้อย', zh: '少冰', ko: '얼음 적게', ja: '氷少なめ' },
+        'normal-ice': { en: 'Normal Ice', th: 'น้ำแข็งปกติ', zh: '正常冰', ko: '보통 얼음', ja: '氷普通' },
+        'extra-ice': { en: 'Extra Ice', th: 'น้ำแข็งเยอะ', zh: '加冰', ko: '얼음 많이', ja: '氷多め' }
       };
       parts.push(iceTexts[customization.iceLevel]?.[currentLanguage] || customization.iceLevel);
     }
     
     if (customization.sweetness) {
       const sweetTexts = {
-        'no-sugar': { en: '0%', th: 'ไม่หวาน', zh: '无糖' },
-        '25%': { en: '25%', th: 'หวานน้อย', zh: '25%糖' },
-        '50%': { en: '50%', th: 'หวานปกติ', zh: '半糖' },
-        '75%': { en: '75%', th: 'หวานมาก', zh: '75%糖' },
-        '100%': { en: '100%', th: 'หวานเต็มที่', zh: '全糖' }
+        'no-sugar': { en: '0%', th: 'ไม่หวาน', zh: '无糖', ko: '무설탕', ja: '砂糖なし' },
+        '25%': { en: '25%', th: 'หวานน้อย', zh: '25%糖', ko: '25%', ja: '25%' },
+        '50%': { en: '50%', th: 'หวานปกติ', zh: '半糖', ko: '50%', ja: '50%' },
+        '75%': { en: '75%', th: 'หวานมาก', zh: '75%糖', ko: '75%', ja: '75%' },
+        '100%': { en: '100%', th: 'หวานเต็มที่', zh: '全糖', ko: '100%', ja: '100%' }
       };
       parts.push(sweetTexts[customization.sweetness]?.[currentLanguage] || customization.sweetness);
     }
@@ -81,9 +85,9 @@ const Cart = ({ isOpen, onClose }) => {
         <div className="bg-white border-b border-gray-200 p-4">
           <div className="flex justify-between items-center">
             <h2 className={`text-xl font-semibold text-gray-900 ${getLanguageClass()}`}>
-              {currentLanguage === 'zh' ? '购物车' : currentLanguage === 'th' ? 'ตะกร้าสินค้า' : 'Cart'}
+              {currentLanguage === 'zh' ? '购物车' : currentLanguage === 'th' ? 'ตะกร้าสินค้า' : currentLanguage === 'ko' ? '장바구니' : currentLanguage === 'ja' ? 'カート' : 'Cart'}
               <span className="ml-2 text-sm font-normal text-gray-500">
-                ({getCartItemCount()} {currentLanguage === 'zh' ? '件商品' : currentLanguage === 'th' ? 'รายการ' : 'items'})
+                ({getCartItemCount()} {currentLanguage === 'zh' ? '件商品' : currentLanguage === 'th' ? 'รายการ' : currentLanguage === 'ko' ? '개 상품' : currentLanguage === 'ja' ? '個の商品' : 'items'})
               </span>
             </h2>
             <button 
@@ -105,10 +109,10 @@ const Cart = ({ isOpen, onClose }) => {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
               </svg>
               <h3 className={`text-lg font-medium text-gray-900 mb-2 ${getLanguageClass()}`}>
-                {currentLanguage === 'zh' ? '购物车为空' : currentLanguage === 'th' ? 'ตะกร้าสินค้าว่าง' : 'Cart is empty'}
+                {currentLanguage === 'zh' ? '购物车为空' : currentLanguage === 'th' ? 'ตะกร้าสินค้าว่าง' : currentLanguage === 'ko' ? '장바구니가 비어있습니다' : currentLanguage === 'ja' ? 'カートが空です' : 'Cart is empty'}
               </h3>
               <p className={`text-gray-500 ${getLanguageClass()}`}>
-                {currentLanguage === 'zh' ? '添加一些美味饮品吧！' : currentLanguage === 'th' ? 'เพิ่มเครื่องดื่มอร่อยๆ กันเถอะ!' : 'Add some delicious drinks!'}
+                {currentLanguage === 'zh' ? '添加一些美味饮品吧！' : currentLanguage === 'th' ? 'เพิ่มเครื่องดื่มอร่อยๆ กันเถอะ!' : currentLanguage === 'ko' ? '맛있는 음료를 추가해보세요!' : currentLanguage === 'ja' ? '美味しいドリンクを追加してください！' : 'Add some delicious drinks!'}
               </p>
             </div>
           ) : (
@@ -144,7 +148,7 @@ const Cart = ({ isOpen, onClose }) => {
                       </p>
                       <div className="flex items-center justify-between mt-2">
                         <div className="text-orange-600 font-semibold">
-                          {formatPrice(item.totalPrice)}
+                          {formatPrice(item.unitPrice)}
                         </div>
                         
                         {/* Quantity Controls */}
@@ -191,7 +195,7 @@ const Cart = ({ isOpen, onClose }) => {
           <div className="bg-white border-t border-gray-200 p-4">
             <div className="flex justify-between items-center mb-4">
               <span className={`text-gray-700 font-medium ${getLanguageClass()}`}>
-                {currentLanguage === 'zh' ? '总计:' : currentLanguage === 'th' ? 'ราคารวม:' : 'Total:'}
+                {currentLanguage === 'zh' ? '总计:' : currentLanguage === 'th' ? 'ราคารวม:' : currentLanguage === 'ko' ? '총계:' : currentLanguage === 'ja' ? '合計:' : 'Total:'}
               </span>
               <span className="text-2xl font-bold text-orange-600">
                 {formatPrice(getCartTotal())}
@@ -202,13 +206,13 @@ const Cart = ({ isOpen, onClose }) => {
                 onClick={clearCart}
                 className="flex-1 py-3 px-4 border border-gray-300 text-gray-700 rounded-lg font-medium hover:bg-gray-50 transition-colors"
               >
-                {currentLanguage === 'zh' ? '清空购物车' : currentLanguage === 'th' ? 'ล้างตะกร้า' : 'Clear Cart'}
+                {currentLanguage === 'zh' ? '清空购物车' : currentLanguage === 'th' ? 'ล้างตะกร้า' : currentLanguage === 'ko' ? '장바구니 비우기' : currentLanguage === 'ja' ? 'カートを空にする' : 'Clear Cart'}
               </button>
               <button 
                 onClick={handleFinalize}
                 className="flex-1 py-3 px-4 bg-orange-500 text-white rounded-lg font-medium hover:bg-orange-600 transition-colors"
               >
-                {currentLanguage === 'zh' ? '确认订单' : currentLanguage === 'th' ? 'ยืนยันคำสั่งซื้อ' : 'Finalize Order'}
+                {currentLanguage === 'zh' ? '确认订单' : currentLanguage === 'th' ? 'ยืนยันคำสั่งซื้อ' : currentLanguage === 'ko' ? '주문 확정' : currentLanguage === 'ja' ? '注文を確定' : 'Finalize Order'}
               </button>
             </div>
           </div>
